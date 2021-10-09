@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="max-w-screen-xl md:m-auto">
+      <top-header />
+      <div class="md:flex md:mt-20 md:mx-auto">
+        <product class="md:flex md:justify-center md:w-5/12" />
+        <product-details class="md:w-5/12 md:ml-24"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import header from './components/header.vue';
+import product from './components/product.vue';
+import details from './components/product-details.vue';
 export default {
-  name: "App",
   components: {
-    HelloWorld,
-  },
+    'top-header': header,
+    product,
+    'product-details': details
+  }
+
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
