@@ -16,11 +16,16 @@
                 <img class="rounded-lg w-1/5 cursor-pointer" src="../assets/images/image-product-4-thumbnail.jpg" alt="">
             </div>
         </div>
+        <!-- <cart class="" /> -->
     </div>
 </template>
 
 <script>
+// import cart from './cart.vue'
 export default {
+    components: {
+        // cart
+    },
     computed: {
         products() {
             return this.$store.state.products;
@@ -43,7 +48,6 @@ export default {
             if(this.currentProduct < 0) {
                 this.currentProduct = this.products.length - 1;
             }
-            console.log(this.currentProduct)
         }
     }
 }

@@ -19,7 +19,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Here](https://your-solution-url.com)
-- Live Site URL: [Here](ecommerce-page-01f790.netlify.app)
+- Live Site URL: [Here](https://ecommerce-page-01f790.netlify.app)
 
 ### Built with
 
