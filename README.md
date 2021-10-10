@@ -29,6 +29,6 @@ Users should be able to:
 - Mobile-first workflow
 
 ## Author
-- Frontend Mentor - [@jesutooni](https://www.frontendmentor.io/profile/jeustooni)
+- Frontend Mentor - [@jesutooni](https://www.frontendmentor.io/profile/jesutooni)
 - Twitter - [@jesutooni_](https://www.twitter.com/jesutooni_)
 
