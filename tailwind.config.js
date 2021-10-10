@@ -15,6 +15,9 @@ module.exports = {
         blue2: 'hsl(219, 9%, 45%)',
         blue3: 'hsl(220, 14%, 75%)',
         blue4: 'hsl(223, 64%, 98%)'
+      },
+      zIndex: {
+        '-10':'-10'
       }
     },
   },

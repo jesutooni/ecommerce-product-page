@@ -18,8 +18,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Here](https://your-solution-url.com)
+- Live Site URL: [Here](ecommerce-page-01f790.netlify.app)
 
 ### Built with
 

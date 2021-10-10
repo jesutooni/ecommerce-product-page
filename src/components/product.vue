@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="h-80 md:h-auto md:w-4/5 overflow-hidden relative">
-            <img class="md:rounded-xl" src="../assets/images/image-product-1.jpg" alt="">
+            <img class="md:rounded-xl" :src="products[currentProduct]" alt="">
             <div class="w-8 h-8 md:hidden flex justify-center items-center bg-white rounded-full absolute left-4 top-1/2">
-                <img class="w-2" src="../assets/images/icon-previous.svg" alt="">
+                <img @click="prevProduct" class="w-2" src="../assets/images/icon-previous.svg" alt="">
             </div>
             <div class="w-8 h-8 md:hidden flex justify-center items-center bg-white rounded-full absolute top-1/2 right-4">
-                <img class="w-2" src="../assets/images/icon-next.svg" alt="">
+                <img @click="nextProduct" class="w-2" src="../assets/images/icon-next.svg" alt="">
             </div>
         
             <div class="w-full hidden md:flex justify-between mt-8">
@@ -21,6 +21,30 @@
 
 <script>
 export default {
-    
+    computed: {
+        products() {
+            return this.$store.state.products;
+        }
+    },
+    data() {
+        return {
+            currentProduct: 0
+        }
+    },
+    methods: {
+        nextProduct() {
+            this.currentProduct++;
+            if(this.currentProduct > this.products.length - 1) {
+                this.currentProduct = 0;
+            }
+        },
+        prevProduct() {
+            this.currentProduct--;
+            if(this.currentProduct < 0) {
+                this.currentProduct = this.products.length - 1;
+            }
+            console.log(this.currentProduct)
+        }
+    }
 }
 </script>

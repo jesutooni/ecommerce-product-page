@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <sidebar />
     <div class="max-w-screen-xl md:m-auto">
       <top-header />
       <div class="md:flex md:mt-20 md:mx-auto">
@@ -14,11 +15,13 @@
 import header from './components/header.vue';
 import product from './components/product.vue';
 import details from './components/product-details.vue';
+import sidebar from './components/sidebar.vue';
 export default {
   components: {
     'top-header': header,
     product,
-    'product-details': details
+    'product-details': details,
+    sidebar
   }
 
 };
