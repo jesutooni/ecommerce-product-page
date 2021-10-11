@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="relative">
         <div class="h-80 md:h-auto md:w-4/5 overflow-hidden relative">
-            <img class="md:rounded-xl" :src="products[currentProduct]" alt="">
+            <img class="md:rounded-xl cursor-pointer" :src="products[currentProduct]" alt="">
             <div class="w-8 h-8 md:hidden flex justify-center items-center bg-white rounded-full absolute left-4 top-1/2">
                 <img @click="prevProduct" class="w-2" src="../assets/images/icon-previous.svg" alt="">
             </div>
@@ -10,25 +10,20 @@
             </div>
         
             <div class="w-full hidden md:flex justify-between mt-8">
-                <img class="rounded-lg w-1/5 cursor-pointer" src="../assets/images/image-product-1-thumbnail.jpg" alt="">
-                <img class="rounded-lg w-1/5 cursor-pointer" src="../assets/images/image-product-2-thumbnail.jpg" alt="">
-                <img class="rounded-lg w-1/5 cursor-pointer" src="../assets/images/image-product-3-thumbnail.jpg" alt="">
-                <img class="rounded-lg w-1/5 cursor-pointer" src="../assets/images/image-product-4-thumbnail.jpg" alt="">
+                <img @click="changeProduct(index)" v-for="(product, index) in productThumbnails" :key="index" :class="`rounded-lg w-1/5 cursor-pointer border-orange ${ index === currentProduct ? 'border-2' : '' }`" :src="product" alt="">
             </div>
         </div>
-        <!-- <cart class="" /> -->
     </div>
 </template>
 
 <script>
-// import cart from './cart.vue'
 export default {
-    components: {
-        // cart
-    },
     computed: {
         products() {
             return this.$store.state.products;
+        },
+        productThumbnails() {
+            return this.$store.state.productThumbnails;
         }
     },
     data() {
@@ -48,7 +43,21 @@ export default {
             if(this.currentProduct < 0) {
                 this.currentProduct = this.products.length - 1;
             }
+        },
+        changeProduct(index) {
+            this.currentProduct = index;
         }
     }
 }
 </script>
+
+<style scoped>
+.overlay {
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>

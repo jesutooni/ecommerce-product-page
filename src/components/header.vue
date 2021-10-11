@@ -12,7 +12,7 @@
             </ul>
         </div>
         <div class="flex items-center">
-            <img class="w-4 h-4 mr-3 sm:w-6 sm:h-6 sm:mr-10 cursor-pointer" src="../assets/images/icon-cart.svg" alt="">
+            <img @click="toggleCart" class="w-4 h-4 mr-3 sm:w-6 sm:h-6 sm:mr-10 cursor-pointer" src="../assets/images/icon-cart.svg" alt="">
             <img class="w-6 h-6 sm:w-10 sm:h-10 cursor-pointer border-2 border-transparent transition duration-150 rounded-full hover:border-orange" src="../assets/images/image-avatar.png" alt="">
         </div>
     </div>
@@ -23,6 +23,9 @@ export default {
     methods: {
         toggleSidebar() {
             this.$store.commit('toggleSidebar');
+        },
+        toggleCart() {
+            this.$store.commit('toggleCart');
         }
     }
 }
