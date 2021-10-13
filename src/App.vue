@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <sidebar />
-    <div class="max-w-screen-xl md:m-auto md:relative bg-white">
+    <div class="max-w-6xl md:m-auto md:relative bg-white">
       <top-header />
       <div class="md:flex md:mt-20 md:mx-auto">
         <product class="md:flex md:justify-center md:w-5/12" />
