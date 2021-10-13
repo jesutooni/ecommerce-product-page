@@ -14,7 +14,7 @@
                 </div>
                 <div class="w-120  mt-7">
                     <div class="w-4/5 mx-auto flex justify-between">
-                        <img @click="changeProduct(index)" v-for="(product, index) in productThumbnails" :key="index" :class="`rounded-lg w-1/5 cursor-pointer border-2 border-transparent ${ index === currentProduct ? 'border-orange' : '' }`" :src="product" alt="">
+                        <img @click="changeProduct(index)" v-for="(product, index) in productThumbnails" :key="index" :class="`rounded-lg w-1/5 cursor-pointer border-2 border-transparent ${ index === currentProduct ? 'border-orange opacity-60' : '' }`" :src="product" alt="">
                     </div>
                 </div>
             </div>
