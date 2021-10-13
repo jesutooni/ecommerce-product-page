@@ -55,7 +55,6 @@ export default new Vuex.Store({
     },
     cartProductDelete: state => {
       state.cartProduct = false;
-      state.count = 0
       state.ordered = 0
     },
     toggleLightbox: state => {
