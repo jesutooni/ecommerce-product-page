@@ -18,7 +18,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Here](https://your-solution-url.com)
+- Solution URL: [Here](https://www.frontendmentor.io/solutions/ecommerce-product-page-Rm-82VxS0)
 - Live Site URL: [Here](https://ecommerce-page-01f790.netlify.app)
 
 ### Built with
