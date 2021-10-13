@@ -29,6 +29,11 @@ export default {
         showCartProduct() {
             this.$store.commit('showCartProduct');
         }
+    },
+    data() {
+        return {
+            orderedCount: 0
+        }
     }
 }
 </script>

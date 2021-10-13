@@ -1,6 +1,6 @@
 <template>
     <div v-if="cart">
-        <div class="bg-white h-auto shadow-2xl absolute top-20 right-2 w-90 rounded-lg">
+        <div class="bg-white h-auto shadow-2xl absolute top-20 inset-x-2 xs:w-90 xs:left-auto rounded-lg">
             <h1 class="p-5 font-bold">Cart</h1>
             <hr>
             <div class="">
@@ -11,7 +11,7 @@
                             <img class="w-12 h-12 rounded-md" src="../assets/images/image-product-1-thumbnail.jpg" alt="">
                             <div class="ml-4 text-lg text-blue2">
                                 <p>Autumn Limited Edition...</p>
-                                <p>${{ discountCost }} x {{ count }} <span class="font-bold text-black text-xl">${{ totalCost }}</span></p>
+                                <p>${{ discountCost }}.00 x {{ ordered }} <span class="font-bold text-black text-xl">${{ totalCost }}.00</span></p>
                             </div>
                         </div>
                         <img @click="cartProductDelete" class="cursor-pointer" src="../assets/images/icon-delete.svg" alt="">
@@ -41,7 +41,10 @@ export default {
             return this.$store.getters.discountCost;
         },
         totalCost() {
-            return this.discountCost * this.count;
+            return this.discountCost * this.ordered;
+        },
+        ordered() {
+            return this.$store.state.ordered;
         }
     },
     methods: {

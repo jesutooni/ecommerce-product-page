@@ -20,8 +20,10 @@ export default new Vuex.Store({
     ],
     cart: false,
     count: 0,
-    productCost: 250.00,
-    cartProduct: false
+    ordered: 0,
+    productCost: 250,
+    cartProduct: false,
+    lightbox: false
   },
   getters: {
     discountCost: state => {
@@ -43,17 +45,21 @@ export default new Vuex.Store({
       if( state.count < 0 ) {
         state.count = 0
       }
-      if( state.count < 1 ) {
-        state.cartProduct = false
-      }
     },
     showCartProduct: state => {
+      state.ordered = state.ordered + state.count;
       if( state.count > 0) {
         state.cartProduct = true
+        state.count = 0
       }
     },
     cartProductDelete: state => {
-      state.cartProduct = false
+      state.cartProduct = false;
+      state.count = 0
+      state.ordered = 0
+    },
+    toggleLightbox: state => {
+      state.lightbox = !state.lightbox;
     }
   },
   actions: {},

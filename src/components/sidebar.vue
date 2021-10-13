@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div :class="`absolute top-0 h-full w-60 bg-white z-50 duration-300 p-6 ${ sidebar ? 'left-0' : '-left-60' }`">
+    <div @click="toggleSidebar" :class="`fixed top-0 h-screen w-full bg-black bg-opacity-0 z-50 ${ sidebar ? 'left-0 bg-opacity-70' : '-left-full' }`">
+        <div @click.stop="" class="bg-white w-3/4 h-full p-6">
             <img @click="toggleSidebar" src="../assets/images/icon-close.svg" alt="">
             <ul class="mt-12 font-bold text-lg">
                 <li class="my-4">Collections</li>
@@ -10,7 +10,7 @@
                 <li class="my-4">Contact</li>
             </ul>
         </div>
-        <div @click="toggleSidebar" :class="`absolute md:hidden inset-0 bg-black duration-200 ${ sidebar ? 'opacity-70 z-20' : 'opacity-0 -z-10' }`"></div>    
+        <!-- <div @click="toggleSidebar" :class="`absolute md:hidden inset-0 bg-black duration-200 ${ sidebar ? 'opacity-70 z-20' : 'opacity-0 -z-10' }`"></div>     -->
     </div>
 </template>
 
